@@ -4,7 +4,8 @@
   "description": "Blocklevel Vue skeleton",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev-server.js"
+    "dev": "node webpack/dev/dev-server.js",
+    "build": "node webpack/build/build.js"
   },
   "repository": {
     "type": "git",
