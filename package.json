@@ -21,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/Blocklevel/blue/issues"
   },
-  "homepage": "https://github.com/Blocklevel/blue#readme"
+  "homepage": "https://github.com/Blocklevel/blue#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "connect-history-api-fallback": "^1.3.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2",
+    "webpack-merge": "^0.14.1"
+  }
 }
