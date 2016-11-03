@@ -4,7 +4,7 @@ var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
 var resolveLoader = require('./resolveLoader');
-var loader = require('./loader');
+var loaders = require('./loaders');
 
 module.exports = {
   entry,
@@ -13,6 +13,6 @@ module.exports = {
   resolve,
   resolveLoader,
   module: {
-    loader
+    loaders
   }
 };
