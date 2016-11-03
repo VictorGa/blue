@@ -4,6 +4,7 @@ module.exports = {
   extensions: ['', '.js'],
   fallback: [path.join(__dirname, '../node_modules')],
   alias: {
+    vue: 'vue/dist/vue.js',
     'src': path.resolve(__dirname, '../src'),
     'assets': path.resolve(__dirname, '../src/assets'),
     'fonts': path.resolve(__dirname, '../src/assets/fonts'),
