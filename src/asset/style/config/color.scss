@@ -1,0 +1,15 @@
+/*
+ * Palette
+ */
+$palette: (
+  black: #000,
+  grey: #f0f0f0
+);
+
+/*
+ * Site colors
+ */
+$colors: (
+  main: palette(black),
+  background: palette(grey)
+)

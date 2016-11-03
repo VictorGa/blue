@@ -1,4 +1,12 @@
 // Layout styles
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
-  background: #c0c0c0;
+  background: color(background);
 }
