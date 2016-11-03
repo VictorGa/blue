@@ -1,20 +1,7 @@
 /*
  * Font size
  */
- @import 'mixin/font-size';
-
- @function palette($key) {
-  @if map-has-key($palette, $key) {
-    @return map-get($palette, $key);
-  }
-
-  @error 'Unfortunately, no value could be retrieved from $palette.'
- }
-
- @function color($key) {
-  @if map-has-key($colors, $key) {
-    @return map-get($colors, $key);
-  }
-
-  @error 'Unfortunately, no value could be retrieved from $colors.'
- }
+@import 'mixin/font-size';
+@import 'mixin/font-face';
+@import 'mixin/color';
+@import 'mixin/aspect-ratio';

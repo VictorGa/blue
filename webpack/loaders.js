@@ -4,7 +4,7 @@ var projectRoot = path.resolve(__dirname, '../');
 module.exports = [
   {
     test: /\.scss$/,
-    loaders: ['style', 'css', 'sass']
+    loaders: ['style', 'css', 'postcss', 'sass']
   },
   {
     test: /\.js$/,
@@ -35,5 +35,5 @@ module.exports = [
       limit: 10000,
       name: 'dist/fonts/[name].[hash:7].[ext]'
     }
-  }
+  },
 ];

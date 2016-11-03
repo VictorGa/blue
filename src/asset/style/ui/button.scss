@@ -2,10 +2,12 @@
  * Button
  */
  .button {
-   outline: none;
    cursor: pointer;
-   background-color: transparent;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   user-select: none;
+   outline: none;
    border: 0;
+   background-color: transparent;
 
    &.primary {
 
