@@ -38,6 +38,8 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.12.2",
-    "webpack-merge": "^0.14.1"
+    "webpack-merge": "^0.14.1",
+    "normalize.css": "^4.2.0",
+    "breakpoint-sass": "^2.7.0"
   }
 }
