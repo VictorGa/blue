@@ -3,8 +3,8 @@ import template from './home.html'
 
 export default {
   template,
-  
+
   mounted () {
-    console.log('Home mounted')
+    console.log('Home mounted', this.styles)
   }
 }
