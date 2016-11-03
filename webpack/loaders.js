@@ -4,7 +4,7 @@ var projectRoot = path.resolve(__dirname, '../');
 module.exports = [
   {
     test: /\.scss$/,
-    loaders: ["style", "css", "sass"]
+    loaders: ['style', 'css', 'sass']
   },
   {
     test: /\.js$/,
@@ -18,7 +18,7 @@ module.exports = [
   },
   {
     test: /\.html$/,
-    loader: "html"
+    loader: 'html'
   },
   {
     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
