@@ -30,6 +30,8 @@
     "eslint": "^3.3.1",
     "eslint-friendly-formatter": "^2.0.6",
     "eventsource-polyfill": "^0.9.6",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.13.3",
