@@ -21,5 +21,9 @@ module.exports = {
         browsers: ['last 3 versions', 'iOS >= 8']
       })
     ]
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter'),
+    configFile: './.eslintrc'
   }
 };
