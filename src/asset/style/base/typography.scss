@@ -13,11 +13,7 @@ html {
 
     // Heading 1
     &.h1 {
-      @include font-size((
-        default: 3rem,
-        $xs: 1.2rem
-      ));
-
+      @include font-size((default: 3rem, $xs: 1.2rem));
       font-family: Arial, sans-serif;
     }
 
