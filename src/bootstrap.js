@@ -40,4 +40,4 @@ const router = new VueRouter({
 /**
  * Bootstrap the application
  */
-export default app();
+export default app(store, router);
