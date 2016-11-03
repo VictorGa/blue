@@ -11,7 +11,7 @@ import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
 
-const debug = process.env.DEBUG
+const debug = process.env.debug
 
 export default new Vuex.Store({
   /**

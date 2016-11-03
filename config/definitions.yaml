@@ -1,0 +1,7 @@
+debug: true
+
+api:
+  base: 'https://blocklevel.nl/api'
+facebook:
+  key: 1478098066847
+  secret: 1478098066847

@@ -33,7 +33,7 @@ const router = new VueRouter({
 /**
  * The debug mode is available globally in the Vue.config.debug property
  */
- Vue.config.debug = process.env.DEBUG
+ Vue.config.debug = process.env.debug
 
  console.log('process.env', process.env)
 
