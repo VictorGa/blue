@@ -3,10 +3,27 @@ const _ = require('lodash');
 const fs = require('fs');
 const yaml = require('js-yaml');
 
+const getDefaultEnv = () => {
+  const args = process.argv.slice(2)
+
+  const arg = _.find(args, arg => {
+    return _.includes(arg, '--env')
+  })
+
+  const envArgIsValid = _.includes(arg, '=')
+
+  if (!envArgIsValid) {
+    return false
+  }
+
+  return _.last(arg.split('='))
+}
+
 const cfgDir = path.resolve(__dirname, './');
-const env = process.env.npm_config_env || process.env.NODE_ENV || 'dev';
+const env = getDefaultEnv() || process.env.NODE_ENV || 'production';
 const envCfgDir = `${cfgDir}/${env}`
 const regex = /\.yaml$/;
+
 
 const getYamlMap = (directory) => {
   return fs.readdirSync(directory)
