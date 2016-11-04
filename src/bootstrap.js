@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import { sync } from 'vuex-router-sync'
-import Vuex from 'vuex'
 
 import routes from './app/routes'
 import store from './app/store'

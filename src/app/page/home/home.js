@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import template from './home.html'
 
 const style = require('./home.scss')

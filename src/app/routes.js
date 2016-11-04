@@ -8,7 +8,7 @@ export default [
     name: 'home',
     path: '/',
     component: Home
-  },
+  }
   // {
   //   path: '/',
   //   redirect: '/:lang?/home'
