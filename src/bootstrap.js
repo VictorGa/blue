@@ -30,14 +30,14 @@ const router = new VueRouter({
   routes
 })
 
+sync(store, router)
+
 /**
  * The debug mode is available globally in the Vue.config.debug property
  */
- Vue.config.debug = process.env.debug
-
- console.log('process.env', process.env)
+Vue.config.debug = process.env.debug
 
 /**
  * Bootstrap the application
  */
-export default app(store, router);
+app(store, router)

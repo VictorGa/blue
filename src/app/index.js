@@ -9,6 +9,4 @@ export default function (store, router) {
   })
 
   app.$mount('#app')
-
-  return app
 }
