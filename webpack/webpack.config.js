@@ -4,6 +4,7 @@ var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
 var resolveLoader = require('./resolveLoader');
+var preLoaders = require('./preLoaders');
 var loaders = require('./loaders');
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
   resolve,
   resolveLoader,
   module: {
+    preLoaders,
     loaders
   },
   postcss: function () {
