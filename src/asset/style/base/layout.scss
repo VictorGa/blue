@@ -10,3 +10,7 @@ html {
 body {
   background: color(background);
 }
+
+:global(#root) {
+  min-height: 100%;
+}

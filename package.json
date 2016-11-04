@@ -52,6 +52,7 @@
     "postcss-cssnext": "^2.8.0",
     "postcss-loader": "^1.1.0",
     "sass-loader": "^4.0.2",
+    "sass-resources-loader": "^1.1.0",
     "style-loader": "^0.13.1",
     "vue-html-loader": "^1.2.3",
     "webpack": "^1.13.3",

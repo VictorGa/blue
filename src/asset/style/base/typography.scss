@@ -6,15 +6,18 @@ html {
   font-size: 62.5%;
 }
 
-/*
- * Heading
- */
-.heading {
+:global {
 
-    // Heading 1
+  /*
+   * Heading
+   */
+  .heading {
+    outline: none;
+
     &.h1 {
-      @include font-size((default: 3rem, $xs: 1.2rem));
+      @include font-size((default: 5rem, $xs: 3rem));
       font-family: Arial, sans-serif;
     }
+  }
 
 }

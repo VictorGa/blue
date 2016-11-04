@@ -11,7 +11,7 @@ import app from './app'
 /**
 * Initialize the main sass file of the application style
 */
-import './asset/style/app.scss'
+require('./asset/style/app.scss')
 
 /**
  * Initialize vue-resource plugin to manage http requests
