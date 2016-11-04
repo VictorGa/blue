@@ -1,3 +1,21 @@
-.home {
-  background: red;
+@import '~breakpoint-sass';
+
+.page {
+  // background: red;
+
+  // @include breakpoint($s) {
+  //   background: color('background');
+  // }
+}
+
+.title {
+
+}
+
+.text {
+
+}
+
+.textActive {
+
 }

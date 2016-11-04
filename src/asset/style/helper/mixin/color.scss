@@ -1,15 +1,7 @@
 @function palette($key) {
- @if map-has-key($palette, $key) {
-   @return map-get($palette, $key);
- }
-
- @error 'Unfortunately, no value could be retrieved from $palette.'
+  @return map-get($palette, $key);
 }
 
 @function color($key) {
- @if map-has-key($colors, $key) {
-   @return map-get($colors, $key);
- }
-
- @error 'Unfortunately, no value could be retrieved from $colors.'
+  @return map-get($colors, $key);
 }

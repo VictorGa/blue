@@ -1,11 +1,14 @@
 import Vue from 'vue'
-import styles from './home.scss'
 import template from './home.html'
+
+const style = require('./home.scss')
 
 export default {
   template,
 
-  mounted () {
-    console.log('Home mounted')
+  data () {
+    return {
+      style
+    }
   }
 }

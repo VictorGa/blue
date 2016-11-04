@@ -22,6 +22,11 @@ module.exports = {
       })
     ]
   },
+  sassResources: [
+    'src/asset/style/helper/mixin/**/*.scss',
+    'src/asset/style/config/variable/breakpoint.scss',
+    'src/asset/style/config/variable/color.scss',
+  ],
   eslint: {
     formatter: require('eslint-friendly-formatter'),
     configFile: './.eslintrc'
