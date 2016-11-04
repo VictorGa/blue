@@ -4,7 +4,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 
 const cfgDir = path.resolve(__dirname, './');
-const env = process.env.NODE_ENV || 'dev';
+const env = process.env.npm_config_env || process.env.NODE_ENV || 'dev';
 const envCfgDir = `${cfgDir}/${env}`
 const regex = /\.yaml$/;
 
