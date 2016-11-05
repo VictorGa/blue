@@ -32,5 +32,8 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter'),
     configFile: './.eslintrc'
+  },
+  node: {
+    fs: 'empty'
   }
 };

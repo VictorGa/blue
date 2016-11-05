@@ -4,7 +4,7 @@ var projectRoot = path.resolve(__dirname, '../');
 module.exports = [
   {
     test: /\.js$/,
-    loader: 'eslint',
+    loader: 'eslint-loader',
     include: projectRoot,
     exclude: /node_modules/
   }

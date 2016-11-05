@@ -1,7 +1,6 @@
 /**
  * The application store
  */
-
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
@@ -11,9 +10,16 @@ import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
 
-const debug = process.env.debug
+const debug = process.env.NODE_ENV
+
+let plugins = []
+
+if (debug) {
+  plugins = [createLogger()]
+}
 
 export default new Vuex.Store({
+
   /**
    * Assign the modules to the store
    */
@@ -27,5 +33,5 @@ export default new Vuex.Store({
   /**
    * Plugins used in the store
    */
-  plugins: debug ? [createLogger()] : []
+  plugins
 })

@@ -1,11 +1,11 @@
 @import '~breakpoint-sass';
 
 .page {
-  // background: red;
+  background: red;
 
-  // @include breakpoint($s) {
-  //   background: color('background');
-  // }
+  @include breakpoint($s) {
+    background: color('background');
+  }
 }
 
 .title {
@@ -17,5 +17,5 @@
 }
 
 .textActive {
-
+  
 }
