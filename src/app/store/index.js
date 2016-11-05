@@ -10,7 +10,7 @@ import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV
+const debug = process.env.debug
 
 let plugins = []
 
