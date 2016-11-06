@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
+var plugins = require('./plugins');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,16 +11,5 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 
 module.exports = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
-
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    })
-  ]
-
+  plugins
 });
