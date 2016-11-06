@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 

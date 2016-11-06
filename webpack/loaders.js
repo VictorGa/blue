@@ -3,12 +3,16 @@ var projectRoot = path.resolve(__dirname, '../');
 
 module.exports = [
   {
+    test: /\.vue$/,
+    loader: 'vue'
+  },
+  {
     test: /\.scss$/,
     loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss', 'sass', 'sass-resources']
   },
   {
     test: /\.js$/,
-    loader: 'babel',
+    loader: 'babel!eslint',
     include: projectRoot,
     exclude: /node_modules/
   },
@@ -35,5 +39,5 @@ module.exports = [
       limit: 10000,
       name: 'dist/fonts/[name].[hash:7].[ext]'
     }
-  },
+  }
 ];
