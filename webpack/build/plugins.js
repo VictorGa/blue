@@ -1,7 +1,11 @@
+var path = require('path');
+var _ = require('lodash');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var {paths,settings} = require('../../config');
 
-module.exports = [
+var plugins = [
   /**
    *
    */
@@ -75,3 +79,5 @@ module.exports = [
     minRatio: 0.8
   }) : null
 ];
+
+module.exports = _.compact(plugins);
