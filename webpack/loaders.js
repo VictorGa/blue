@@ -22,7 +22,7 @@ module.exports = [
   },
   {
     test: /\.html$/,
-    loader: 'vue-html!markup-inline'
+    loader: 'vue-html'
   },
   {
     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
