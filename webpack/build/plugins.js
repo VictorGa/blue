@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var {paths,settings} = require('../../config');
 
 module.exports = [
