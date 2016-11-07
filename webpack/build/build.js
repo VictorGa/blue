@@ -6,7 +6,7 @@ var timestamp = Math.floor(new Date().getTime() / 1000);
 var assetRoot = `version/${timestamp}/${paths.assetsRoot}`;
 
 webpackConfig.output = {
-  path: paths.assetsRoot,
+  path: path.resolve(__dirname, '../../', paths.assetsRoot),
   filename: `${assetRoot}/js/[name].js`,
   chunkFilename: `${assetRoot}/js/[id].js`
 };
