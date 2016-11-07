@@ -1,5 +1,5 @@
 export default {
   mounted () {
-    console.log('HOME')
+    // console.log('HOME')
   }
 }
