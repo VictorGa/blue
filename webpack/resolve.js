@@ -5,9 +5,10 @@ module.exports = {
   fallback: [path.join(__dirname, '../node_modules')],
   alias: {
     vue: 'vue/dist/vue.js',
-    'src': path.resolve(__dirname, '../src'),
-    'assets': path.resolve(__dirname, '../src/assets'),
-    'fonts': path.resolve(__dirname, '../src/assets/fonts'),
-    'components': path.resolve(__dirname, '../src/app/components')
+    src: path.resolve(__dirname, '../src'),
+    asset: path.resolve(__dirname, '../src/asset'),
+    style: path.resolve(__dirname, '../src/asset/style'),
+    font: path.resolve(__dirname, '../src/asset/font'),
+    component: path.resolve(__dirname, '../src/app/component')
   }
 }
