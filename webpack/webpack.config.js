@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var entry = require('./entry');
 var postcss = require('./postcss');
-var sassRecources = require('./sassRecources');
+var sassResources = require('./sassResources');
 var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
@@ -25,7 +25,7 @@ module.exports = {
     configFile: './.eslintrc'
   },
   postcss,
-  sassRecources,
+  sassResources,
   vue: {
     loaders: {
       js: 'babel!eslint',
@@ -37,6 +37,6 @@ module.exports = {
       camelCase: true
     },
     postcss,
-    sassRecources
+    sassResources
   }
 };
