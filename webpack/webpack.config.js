@@ -6,6 +6,7 @@ var resolve = require('./resolve');
 var resolveLoader = require('./resolveLoader');
 var preLoaders = require('./preLoaders');
 var loaders = require('./loaders');
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry,
@@ -35,7 +36,24 @@ module.exports = {
   },
   vue: {
     loaders: {
-      js: 'babel!eslint'
-    }
+      js: 'babel!eslint',
+      scss: 'vue-style-loader!css-loader!sass!sass-resources'
+    },
+    cssModules: {
+      localIdentName: '[path][name]---[local]---[hash:base64:5]',
+      camelCase: true
+    },
+    postcss: function () {
+      return [
+        require('postcss-cssnext')({
+          browsers: ['last 3 versions', 'iOS >= 8']
+        })
+      ]
+    },
+    sassResources: [
+      'src/asset/style/helper/mixin/**/*.scss',
+      'src/asset/style/config/variable/breakpoint.scss',
+      'src/asset/style/config/variable/color.scss',
+    ]
   }
 };

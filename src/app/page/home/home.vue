@@ -1,21 +1,25 @@
 <style lang="scss" module>
-@import '~breakpoint-sass';
-
 .page {
-  background: red;
-
-  @include breakpoint($s) {
-    background: color('background');
-  }
+  flex: 1;
+  background: color('main');
 }
 
-.myButton {
-  composes: defaultButton from 'style/ui/button.scss';
+.title {
+  display: inline-block;
+  padding: 20px;
+  background: green;
+
+  span {
+    float: left;
+    background: blue;
+  }
 }
 </style>
 
 <template>
-  <div class="home">
-    <h2>Home page</h2>
+  <div :class="$style.page">
+    <h2 :class="$style.title">Home <span>page</span></h2>
   </div>
 </template>
+
+<script src="./home.js"></script>
