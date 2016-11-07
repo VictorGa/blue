@@ -29,7 +29,8 @@ module.exports = {
   vue: {
     loaders: {
       js: 'babel!eslint',
-      scss: 'vue-style-loader!css-loader!sass!sass-resources'
+      scss: 'vue-style-loader!css-loader!sass!sass-resources',
+      html: 'html!markup-inline'
     },
     cssModules: {
       localIdentName: '[path][name]---[local]---[hash:base64:5]',
