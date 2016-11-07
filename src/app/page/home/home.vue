@@ -4,5 +4,7 @@
 <template>
   <div :class="$style.page">
     <h2 :class="$style.title">Home <span>page</span></h2>
+
+    <svg src="./../../../asset/image/track.svg" />
   </div>
 </template>
