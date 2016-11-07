@@ -34,7 +34,7 @@ sync(store, router)
 /**
  * The debug mode is available globally in the Vue.config.debug property
  */
-Vue.config.debug = process.env.debug
+Vue.config.debug = CONFIG.debug
 
 /**
  * Bootstrap the application
