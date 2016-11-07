@@ -1,29 +1,19 @@
-/*
- * Vendor
- */
+// Vendor
 @import '~normalize.css';
 @import '~breakpoint-sass';
 
-/*
- * Helper
- */
+// Helper
 @import 'helper/mixin';
 
-/*
- * Configuration
- */
+// Configuration
 @import 'config/variable';
 
- /*
-  * Base
-  */
+ // Base
 @import 'base/font';
 @import 'base/typography';
 @import 'base/layout';
 
- /*
-  * UI
-  */
+ // UI
 @import 'ui/button';
 @import 'ui/icon';
 @import 'ui/form';

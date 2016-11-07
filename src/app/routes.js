@@ -1,7 +1,7 @@
 /**
  * Routes
  */
-import Home from './page/home/home'
+import Home from './page/home/home.vue'
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     path: '/',
     component: Home
   }
-  
+
   // {
   //   path: '/',
   //   redirect: '/:lang?/home'
