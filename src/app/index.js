@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueI18nManager from 'vue-i18n-manager'
 import template from './index.html'
 
 export default function (store, router) {
@@ -8,5 +9,13 @@ export default function (store, router) {
     router
   })
 
-  app.$mount('#app')
+  Vue.use(VueI18nManager, {
+    store,
+    router,
+    config: {
+      path: 'static/lang/'
+    }
+  })
+
+  Vue.$i18n.init().then(() => app.$mount('#app'))
 }

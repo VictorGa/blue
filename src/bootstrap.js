@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
+import VueAnalytics from 'vue-analytics'
 import { sync } from 'vuex-router-sync'
 
 import routes from './app/routes'
@@ -11,6 +12,11 @@ import app from './app'
 * Initialize the main sass file of the application style
 */
 require('./asset/style/app.scss')
+
+/**
+ * The debug mode is available globally in the Vue.config.debug property
+ */
+Vue.config.debug = process.env.debug
 
 /**
  * Initialize vue-resource plugin to manage http requests
@@ -32,9 +38,9 @@ const router = new VueRouter({
 sync(store, router)
 
 /**
- * The debug mode is available globally in the Vue.config.debug property
+ * Analytics
  */
-Vue.config.debug = process.env.debug
+Vue.use(VueAnalytics, { router })
 
 /**
  * Bootstrap the application
