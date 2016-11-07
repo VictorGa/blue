@@ -1,5 +1,7 @@
 var webpack = require('webpack');
 var entry = require('./entry');
+var postcss = require('./postcss');
+var sassRecources = require('./sassRecources');
 var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
@@ -18,22 +20,12 @@ module.exports = {
     preLoaders,
     loaders
   },
-  postcss: function () {
-    return [
-      require('postcss-cssnext')({
-        browsers: ['last 3 versions', 'iOS >= 8']
-      })
-    ]
-  },
-  sassResources: [
-    'src/asset/style/helper/mixin/**/*.scss',
-    'src/asset/style/config/variable/breakpoint.scss',
-    'src/asset/style/config/variable/color.scss',
-  ],
   eslint: {
     formatter: require('eslint-friendly-formatter'),
     configFile: './.eslintrc'
   },
+  postcss,
+  sassRecources,
   vue: {
     loaders: {
       js: 'babel!eslint',
@@ -43,17 +35,7 @@ module.exports = {
       localIdentName: '[path][name]---[local]---[hash:base64:5]',
       camelCase: true
     },
-    postcss: function () {
-      return [
-        require('postcss-cssnext')({
-          browsers: ['last 3 versions', 'iOS >= 8']
-        })
-      ]
-    },
-    sassResources: [
-      'src/asset/style/helper/mixin/**/*.scss',
-      'src/asset/style/config/variable/breakpoint.scss',
-      'src/asset/style/config/variable/color.scss',
-    ]
+    postcss,
+    sassRecources
   }
 };
