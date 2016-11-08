@@ -2,24 +2,12 @@
  * Routes
  */
 import Home from './page/home/home.vue'
+import { routeParser } from 'vue-i18n-manager'
 
-export default [
+export default routeParser([
   {
-    name: 'root',
-    path: '/:lang',
-    component: {
-      template: '<router-view></router-view>'
-    },
-    children: [
-      {
-        name: 'home',
-        path: '/',
-        component: Home
-      }
-    ]
-  },
-  {
-    path: '/*',
-    redirect: '/en'
+    name: 'home',
+    path: '/',
+    component: Home
   }
-]
+])
