@@ -3,8 +3,36 @@
 
 <template>
   <div :class="$style.page">
-    <h2 :class="$style.title">Home <span>page</span></h2>
-    {{ $t('message') }}
-    <svg src="./../../../asset/image/track.svg" />
+
+    <img src="../../../asset/image/track.svg" />
+
+      {{ totalIncome }}
+
+      <div class="income">
+        <input type="number" v-model="newIncome">
+        <button type="button" @click="addIncome">Add Income</button>
+      </div>
+
+      <ul>
+        <li v-for="income in incomes">
+          {{ income.value }}
+        </li>
+      </ul>
+
+      {{ totalExpense }}
+
+      <div class="expense">
+        <input type="number" v-model="newExpense">
+        <button type="button" @click="addExpense">Add expense</button>
+      </div>
+
+      <ul>
+        <li v-for="expense in expenses">
+          {{ expense.value }}
+        </li>
+      </ul>
+
+      {{ balance }}
+
   </div>
 </template>
