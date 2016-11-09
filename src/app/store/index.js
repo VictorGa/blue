@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
 
 // Store modules
-// import locale from './modules/locale'
+import budget from './budget'
 
 Vue.use(Vuex)
 
@@ -23,7 +23,9 @@ export default new Vuex.Store({
   /**
    * Assign the modules to the store
    */
-  modules: {},
+  modules: {
+    budget
+  },
 
   /**
    * If strict mode should be enabled

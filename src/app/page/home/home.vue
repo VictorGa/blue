@@ -4,8 +4,6 @@
 <template>
   <div :class="$style.page">
 
-    <img src="../../../asset/image/track.svg" />
-
       {{ totalIncome }}
 
       <div class="income">
@@ -27,12 +25,14 @@
       </div>
 
       <ul>
-        <li v-for="expense in expenses">
+        <li v-for="(expense, index) in expenses">
           {{ expense.value }}
+
+          <button :data-index="index" type="button" @click="removeExpense(expense)">X</button>
         </li>
       </ul>
 
-      {{ balance }}
+      {{ totalBalance }}
 
   </div>
 </template>
