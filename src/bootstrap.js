@@ -9,9 +9,9 @@ import store from './app/store'
 import app from './app'
 
 /**
-* Initialize the main sass file of the application style
+* Initialize base application styles
 */
-// require('./asset/style/app.scss')
+require('./asset/style/base.css')
 
 /**
  * The debug mode is available globally in the Vue.config.debug property

@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var entry = require('./entry');
 var postcss = require('./postcss');
-var sassResources = require('./sassResources');
 var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
@@ -25,18 +24,15 @@ module.exports = {
     configFile: './.eslintrc'
   },
   postcss,
-  sassResources,
   vue: {
     loaders: {
       js: 'babel!eslint',
-      css: 'vue-style-loader!css-loader',
       html: 'vue-loader/lib/template-compiler'
     },
     cssModules: {
       localIdentName: '[path][name]---[local]---[hash:base64:5]',
       camelCase: true
     },
-    postcss,
-    sassResources
+    postcss
   }
 };
