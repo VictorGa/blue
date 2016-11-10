@@ -40,18 +40,16 @@ module.exports = config => {
     }
   }
 
-  if (process.env.TRAVIS) {
-    configuration.customLaunchers = {
-
-      // eslint-disable-next-line camelcase
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    }
-
-    configuration.browsers = ['Chrome_travis_ci']
-  }
+  // if (process.env.TRAVIS) {
+  //   configuration.customLaunchers = {
+  //     chromeTravisCI: {
+  //       base: 'Chrome',
+  //       flags: ['--no-sandbox']
+  //     }
+  //   }
+  //
+  //   configuration.browsers = ['chromeTravisCI']
+  // }
 
   config.set(configuration)
 }
