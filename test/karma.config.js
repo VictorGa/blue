@@ -24,7 +24,6 @@ module.exports = config => {
       'karma-phantomjs-launcher',
       'karma-chai',
       'karma-mocha',
-      'karma-coverage',
       'karma-webpack',
       'karma-mocha-reporter'
     ],
