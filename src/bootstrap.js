@@ -11,7 +11,7 @@ import app from './app'
 /**
 * Initialize the main sass file of the application style
 */
-require('./asset/style/app.scss')
+// require('./asset/style/app.scss')
 
 /**
  * The debug mode is available globally in the Vue.config.debug property

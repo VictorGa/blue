@@ -29,7 +29,7 @@ module.exports = {
   vue: {
     loaders: {
       js: 'babel!eslint',
-      scss: 'vue-style-loader!css-loader!sass!sass-resources',
+      css: 'vue-style-loader!css-loader',
       html: 'vue-loader/lib/template-compiler'
     },
     cssModules: {

@@ -1,10 +1,11 @@
 <script src="./home.js"></script>
-<style lang="scss" module src="./home.scss"></style>
+<style module src="./home.css"></style>
 
 <template>
   <div :class="$style.page">
-    <h2 :class="$style.title">Home <span>page</span></h2>
-    {{ $t('message') }}
-    <svg src="~asset/image/track.svg" />
+    <div :class="$style.content">
+      <h2 :class="$style.title">Home</h2>
+      {{ $t('message') }}
+    </div>
   </div>
 </template>
