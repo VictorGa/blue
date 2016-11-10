@@ -1,15 +1,21 @@
 <script src="./home.js"></script>
 
 <style module>
+  $backgroundColor: green;
+
   .page {
     composes: full-content-centered from 'style/compose/layout/page.css';
+    background: red;
+
+    @media($m) {
+      background: $backgroundColor;
+    }
   }
 
   .content {
     size: 200px;
     margin: * auto;
-    background: purple;
-    font-size: 1.25em/1.5em;
+    text: bold center 1.25em 1.5em;
   }
 
   .title {

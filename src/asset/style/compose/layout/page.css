@@ -1,12 +1,20 @@
+/**
+ * Fills the whole viewport. When content is bigger the element
+ * automatically increases in size as well.
+ */
 .fullscreen {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #c0c0c0;
 }
 
+/**
+ * Fills the whole viewport. When content is bigger the element
+ * automatically increases in size as well. Content inside this
+ * element will be vertically centered.
+ */
 .full-content-centered {
+  composes: fullscreen;
   display: flex;
-  width: 100%;
-  min-height: 100vh;
-  background: red;
+  align-items: center;
 }

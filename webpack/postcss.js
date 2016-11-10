@@ -1,10 +1,8 @@
 var path = require('path');
 
 module.exports = function () {
-  const fontPath = path.join(__dirname, '../src/asset/font')
+  const mixinsDir = path.join(__dirname, '../src/asset/style/mixin')
   const variables = require('../src/asset/style/config/variables.js')
-
-  console.log('vars', variables)
 
   return [
     /**
@@ -14,7 +12,7 @@ module.exports = function () {
     require('postcss-nested'),
 
     /**
-     * Nestedd
+     * Plugin to inline @import rules content
      */
     require('postcss-import'),
 
@@ -31,7 +29,7 @@ module.exports = function () {
      * https://github.com/postcss/postcss-mixins
      */
     require('postcss-mixins')({
-      mixinsDir: path.join(__dirname, '../src/asset/style/mixin')
+      mixinsDir
     }),
 
     /**
