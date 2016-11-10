@@ -1,4 +1,3 @@
-const path = require('path')
 const webpackConfig = require('../webpack/webpack.config.js')
 
 webpackConfig.entry = './test/index.js'
@@ -23,7 +22,6 @@ module.exports = config => {
     plugins: [
       'karma-chrome-launcher',
       'karma-phantomjs-launcher',
-      'karma-sourcemap-loader',
       'karma-chai',
       'karma-mocha',
       'karma-coverage',
@@ -31,7 +29,7 @@ module.exports = config => {
       'karma-mocha-reporter'
     ],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './index.js': ['webpack']
     },
     webpack: webpackConfig,
     webpackMiddleware: {
