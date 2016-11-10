@@ -1,44 +1,43 @@
-var webpackConfig = require('../webpack/webpack.config.js');
+const path = require('path')
+const webpackConfig = require('../webpack/webpack.config.js')
 
-delete webpackConfig.entry
+webpackConfig.entry = './test/index.js'
 
-module.exports = function (config) {
-  config.set({
-    browsers: ['PhantomJS'],
-    singleRun: false,
+module.exports = config => {
+  const TRAVIS = process.env.TRAVIS
+
+  let singleRun = false
+  let browsers = ['Chrome']
+
+  if (TRAVIS) {
+    singleRun = true
+    browsers = ['PhantomJS']
+  }
+
+  const configuration = {
+    browsers,
+    singleRun: TRAVIS,
     frameworks: ['mocha', 'chai'],
     reporters: ['mocha'],
-    files: [
-        './index.js',
-    ],
+    files: ['./index.js'],
     plugins: [
-        'karma-phantomjs-launcher',
-        'karma-chai',
-        'karma-mocha',
-        'karma-webpack',
-        'karma-mocha-reporter',
+      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
+      'karma-sourcemap-loader',
+      'karma-chai',
+      'karma-mocha',
+      'karma-coverage',
+      'karma-webpack',
+      'karma-mocha-reporter'
     ],
     preprocessors: {
-        './index.js': ['webpack']
+      './index.js': ['webpack', 'sourcemap']
     },
-    webpack: {
-      entry: './test/index.js',
-      output: {
-        path: __dirname,
-        filename: 'test-bundle.js'
-      },
-      module: {
-        loaders: [
-          {
-            test: /\.js$/,
-            loader: 'babel',
-            exclude: /node_modules/
-          }
-        ]
-      }
-    },
+    webpack: webpackConfig,
     webpackMiddleware: {
-        noInfo: true
+      noInfo: true
     }
-  });
-};
+  }
+
+  config.set(configuration)
+}

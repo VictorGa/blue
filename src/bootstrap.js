@@ -45,4 +45,4 @@ Vue.use(VueAnalytics, { router })
 /**
  * Bootstrap the application
  */
-app(store, router)
+export default app(store, router)
