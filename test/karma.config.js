@@ -1,25 +1,23 @@
-var webpackConfig = require('../webpack/webpack.config.js');
+const webpackConfig = require('../webpack/webpack.config.js')
 
 delete webpackConfig.entry
 
-module.exports = function (config) {
-  config.set({
+module.exports = config => {
+  const configuration = {
     browsers: ['PhantomJS'],
     singleRun: false,
     frameworks: ['mocha', 'chai'],
     reporters: ['mocha'],
-    files: [
-        './index.js',
-    ],
+    files: ['./index.js'],
     plugins: [
-        'karma-phantomjs-launcher',
-        'karma-chai',
-        'karma-mocha',
-        'karma-webpack',
-        'karma-mocha-reporter',
+      'karma-phantomjs-launcher',
+      'karma-chai',
+      'karma-mocha',
+      'karma-webpack',
+      'karma-mocha-reporter'
     ],
     preprocessors: {
-        './index.js': ['webpack']
+      './index.js': ['webpack']
     },
     webpack: {
       entry: './test/index.js',
@@ -38,7 +36,22 @@ module.exports = function (config) {
       }
     },
     webpackMiddleware: {
-        noInfo: true
+      noInfo: true
     }
-  });
-};
+  }
+
+  if (process.env.TRAVIS) {
+    configuration.customLaunchers = {
+
+      // eslint-disable-next-line camelcase
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    }
+
+    configuration.browsers = ['Chrome_travis_ci']
+  }
+
+  config.set(configuration)
+}
