@@ -30,7 +30,7 @@ module.exports = {
       html: 'vue-loader/lib/template-compiler'
     },
     cssModules: {
-      localIdentName: '[path][name]---[local]---[hash:base64:5]',
+      localIdentName: '[name]__[local]___[hash:base64:5]--[hash:base64:5]',
       camelCase: true
     },
     postcss

@@ -1,11 +1,12 @@
 <script src="./home.js"></script>
 
 <style module>
-  $backgroundColor: green;
+  $backgroundColor: #eaeaea;
 
   .page {
+    position: absolute 0 * * 0;
     composes: full-content-centered from 'style/compose/layout/page.css';
-    background: red;
+    background: #c0c0c0;
 
     @media($m) {
       background: $backgroundColor;
