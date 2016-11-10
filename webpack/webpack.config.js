@@ -30,7 +30,7 @@ module.exports = {
     loaders: {
       js: 'babel!eslint',
       scss: 'vue-style-loader!css-loader!sass!sass-resources',
-      html: 'vue-loader/lib/template-compiler!svgloader'
+      html: 'vue-loader/lib/template-compiler'
     },
     cssModules: {
       localIdentName: '[path][name]---[local]---[hash:base64:5]',
