@@ -1,6 +1,6 @@
-const webpackConfig = require('../webpack/webpack.config.js')
+const webpack = require('../webpack/webpack.config.js')
 
-webpackConfig.entry = './test/index.js'
+webpack.entry = './test/index.js'
 
 module.exports = config => {
   const TRAVIS = process.env.TRAVIS
@@ -10,7 +10,7 @@ module.exports = config => {
 
   if (TRAVIS) {
     singleRun = true
-    browsers = ['PhantomJS']
+    browsers = ['chromeTravisCI']
   }
 
   const configuration = {
@@ -30,9 +30,15 @@ module.exports = config => {
     preprocessors: {
       './index.js': ['webpack']
     },
-    webpack: webpackConfig,
+    webpack,
     webpackMiddleware: {
       noInfo: true
+    },
+    customLaunchers: {
+      chromeTravisCI: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     }
   }
 
