@@ -3,9 +3,11 @@ const webpackConfig = require('../webpack/webpack.config.js')
 delete webpackConfig.entry
 
 module.exports = config => {
+  const singleRun = process.env.TRAVIS
+
   const configuration = {
     browsers: ['PhantomJS'],
-    singleRun: false,
+    singleRun,
     frameworks: ['mocha', 'chai'],
     reporters: ['mocha'],
     files: ['./index.js'],
