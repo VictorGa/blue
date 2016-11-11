@@ -1,0 +1,16 @@
+{
+ "processors": ["stylelint-processor-html"],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "number-leading-zero": null,
+    "property-no-unknown": [ true, {
+      "ignoreProperties": [
+        "composes",
+        "text"
+      ]
+    }],
+    "rule-nested-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "unit-whitelist": ["em", "rem", "%", "vw", "vh", "px"]
+  }
+}

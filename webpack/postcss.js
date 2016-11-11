@@ -3,6 +3,10 @@ var path = require('path');
 module.exports = function () {
   const mixinsDir = path.join(__dirname, '../src/asset/style/mixin')
   const variables = require('../src/asset/style/config/variables.js')
+  const globPath = [
+    path.join(__dirname) + '../src/**/*.css',
+    path.join(__dirname) + '../src/**/*.vue'
+  ];
 
   return [
     /**
@@ -14,7 +18,7 @@ module.exports = function () {
     /**
      * Plugin to inline @import rules content
      */
-    require('postcss-import'),
+    require("postcss-import"),
 
     /**
      * PostCSS plugin for Sass-like variables, conditionals, and iteratives

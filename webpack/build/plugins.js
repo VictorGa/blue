@@ -30,7 +30,8 @@ var plugins = [
   /**
    *
    */
-  new ExtractTextPlugin(`${paths.assetsRoot}css/[name].[contenthash].css`),
+
+  new ExtractTextPlugin(`${assetRoot}/css/[name].[contenthash].css`),
 
   /**
    *

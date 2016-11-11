@@ -8,7 +8,7 @@
     composes: full-content-centered from 'style/compose/layout/page.css';
     background: #c0c0c0;
 
-    @media($m) {
+    @media ($m) {
       background: $backgroundColor;
     }
   }
