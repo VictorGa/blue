@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var plugins = require('./plugins');
+var loaders = require('./loaders');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,7 +10,12 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./webpack/dev/dev-client'].concat(baseWebpackConfig.entry[name])
 });
 
-module.exports = merge(baseWebpackConfig, {
+ const config = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
-  plugins
+  plugins,
+  module: {
+      loaders
+  }
 });
+
+module.exports = config;
