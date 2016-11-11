@@ -3,13 +3,18 @@ var {paths,settings} = require('../../config');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.build');
 var timestamp = Math.floor(new Date().getTime() / 1000);
-var assetRoot = `version/${timestamp}/${paths.assetsRoot}`;
+var buildTarget = path.join(__dirname, '../../', `${paths.buildPath}/version/${timestamp}/`);
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 webpackConfig.output = {
-  path: path.resolve(__dirname, '../../', paths.assetsRoot),
-  filename: `${assetRoot}/js/[name].js`,
-  chunkFilename: `${assetRoot}/js/[id].js`
+  path: buildTarget,
+  filename: `js/[name].js`,
+  chunkFilename: `js/[id].js`
 };
+
+webpackConfig.plugins.unshift(
+  new ExtractTextPlugin(`css/[name].css`)
+);
 
 webpack(webpackConfig, function (err, stats) {
   if (err) throw err;

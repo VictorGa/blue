@@ -1,2 +1,3 @@
-index: 'index.html'
-assetsRoot: './dist'
+index: '../../index.html'
+# assetsRoot: './dist'
+buildPath: './dist'
