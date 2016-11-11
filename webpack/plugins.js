@@ -4,10 +4,6 @@ const webpack = require('webpack');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = [
-  new webpack.DefinePlugin({
-    'process.env': JSON.stringify(definitions)
-  }),
-
   new StyleLintPlugin({
     configFile: '.stylelintrc',
     context: 'inherits from webpack',

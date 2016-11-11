@@ -1,20 +1,30 @@
+var shell = require('shelljs'); // because f**k global
 var path = require('path');
-var {paths,settings} = require('../../config');
+var _ = require('lodash');
+var {paths,settings,definitions} = require('../../config');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.build');
 var timestamp = Math.floor(new Date().getTime() / 1000);
-var buildTarget = path.join(__dirname, '../../', `${paths.buildPath}/version/${timestamp}/`);
+var publicPath = `version/${timestamp}`;
+var buildTarget = path.join(__dirname, '../../', `${paths.buildPath}/${publicPath}`);
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 webpackConfig.output = {
-  path: buildTarget,
+  path: `${buildTarget}/`,
   filename: `js/[name].js`,
   chunkFilename: `js/[id].js`
-};
+}
+
+const processEnv = _.merge(definitions, { publicPath })
 
 webpackConfig.plugins.unshift(
-  new ExtractTextPlugin(`css/[name].css`)
-);
+  new webpack.DefinePlugin({
+    'process.env': JSON.stringify(processEnv)
+  })
+)
+
+shell.mkdir('-p', buildTarget)
+shell.cp('-R', 'static/', buildTarget)
 
 webpack(webpackConfig, function (err, stats) {
   if (err) throw err;
@@ -26,4 +36,4 @@ webpack(webpackConfig, function (err, stats) {
       chunks: false,
       chunkModules: false
     }) + '\n')
-});
+})

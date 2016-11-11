@@ -1,8 +1,12 @@
 var webpack = require('webpack');
+var {definitions} = require('../../config');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
+  new webpack.DefinePlugin({
+    'process.env': JSON.stringify(definitions)
+  }),
   /**
    * https://github.com/webpack/docs/wiki/optimization
    */

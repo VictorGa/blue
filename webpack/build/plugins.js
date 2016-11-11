@@ -8,6 +8,8 @@ var {paths,settings} = require('../../config');
 
 var plugins = [
 
+  new ExtractTextPlugin(`css/[name].css`),
+
   /**
    *
    */
