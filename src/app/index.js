@@ -17,5 +17,5 @@ export default function (store, router) {
     config: { path }
   })
 
-  Vue.$i18n.init().then(() => app.$mount('#app'))
+  return Vue.$i18n.init().then(() => app.$mount('#app'))
 }
