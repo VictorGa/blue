@@ -24,7 +24,7 @@ webpackConfig.plugins.unshift(
 )
 
 shell.mkdir('-p', buildTarget)
-shell.cp('-R', 'static/', buildTarget)
+shell.cp('-R', paths.staticPath, buildTarget)
 
 webpack(webpackConfig, function (err, stats) {
   if (err) throw err;

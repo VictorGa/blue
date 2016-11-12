@@ -1,3 +1,2 @@
 index: '../../index.html'
-# assetsRoot: './dist'
 buildPath: './dist'
