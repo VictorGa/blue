@@ -9,12 +9,14 @@ export default function (store, router) {
     router
   })
 
-  const path = `${process.env.publicPath}/static/lang`
+  const path = `${process.env.publicPath}static/lang`
 
   Vue.use(VueI18nManager, {
     store,
     router,
-    config: { path }
+    config: {
+      path: 'static/lang/'
+    }
   })
 
   return Vue.$i18n.init().then(() => app.$mount('#app'))

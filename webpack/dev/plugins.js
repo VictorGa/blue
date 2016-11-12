@@ -1,12 +1,18 @@
+var _ = require('lodash')
 var webpack = require('webpack');
-var {definitions} = require('../../config');
+var {definitions, paths} = require('../../config');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const { publicPath } = paths;
+const processEnv = _.merge(definitions, { publicPath })
+
 module.exports = [
+
   new webpack.DefinePlugin({
-    'process.env': JSON.stringify(definitions)
+    'process.env': JSON.stringify(processEnv)
   }),
+
   /**
    * https://github.com/webpack/docs/wiki/optimization
    */
