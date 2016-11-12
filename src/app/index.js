@@ -14,9 +14,7 @@ export default function (store, router) {
   Vue.use(VueI18nManager, {
     store,
     router,
-    config: {
-      path: 'static/lang/'
-    }
+    config: { path }
   })
 
   return Vue.$i18n.init().then(() => app.$mount('#app'))
