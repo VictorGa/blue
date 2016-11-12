@@ -1,7 +1,7 @@
 var {paths} = require('../config');
 
 module.exports = {
-  path: paths.assetsRoot,
-  publicPath: paths.assetsPublicPath,
+  path: paths.publicPath,
+  publicPath: '/',
   filename: '[name].js'
 };
