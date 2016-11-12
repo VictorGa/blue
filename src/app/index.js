@@ -9,6 +9,8 @@ export default function (store, router) {
     router
   })
 
+  const path = `${process.env.publicPath}static/lang`
+
   Vue.use(VueI18nManager, {
     store,
     router,
