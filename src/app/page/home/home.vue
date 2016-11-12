@@ -1,11 +1,14 @@
 <script src="./home.js"></script>
 
 <style module>
+  $page: 'style/compose/layout/page.css';
+  $button: 'style/compose/ui/button.css';
+
   $backgroundColor: #eaeaea;
 
   .page {
     position: absolute 0 * * 0;
-    composes: full-content-centered from 'style/compose/layout/page.css';
+    composes: fullscreen-centered from $page;
     background: #c0c0c0;
 
     @media ($m) {
@@ -22,6 +25,10 @@
   .title {
     composes: type-1 from 'style/compose/type/heading.css';
   }
+
+  .button {
+    composes: primary from $button;
+  }
 </style>
 
 <template>
@@ -29,6 +36,7 @@
     <div :class="$style.content">
       <h2 :class="$style.title">Home</h2>
       {{ $t('message') }}
+      <button :class="$style.button">Hoi</button>
     </div>
   </div>
 </template>

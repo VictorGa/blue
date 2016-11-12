@@ -13,7 +13,7 @@
  * automatically increases in size as well. Content inside this
  * element will be vertically centered.
  */
-.full-content-centered {
+.fullscreen-centered {
   composes: fullscreen;
   display: flex;
   align-items: center;
