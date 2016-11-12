@@ -12,17 +12,12 @@ $button: 'style/compose/ui/button.css';
  */
 .page {
   composes: fullscreen-centered from $page;
-  background: #c0c0c0;
-
-  @media ($m) {
-    background: red;
-  }
 }
 
 /**
  * Content
  *
- * Centered X/Y because we compose 'fullscreen-centered' on page.
+ * Centered horizontally and vertically.
  */
 .content {
   size: 200px;
