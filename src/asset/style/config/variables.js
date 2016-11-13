@@ -7,6 +7,15 @@ const font = require('./font')
 const mobileFirst = false
 
 /**
+ * Paths
+ */
+const paths = {
+  page: '"postcss!style/compose/layout/page.css"',
+  heading: '"postcss!style/compose/type/heading.css"',
+  button: '"postcss!style/compose/ui/button.css"'
+}
+
+/**
  * Colors
  */
 const colors = {
@@ -47,4 +56,4 @@ if (mobileFirst) {
   }
 }
 
-module.exports = merge(colors, mediaQueries, sizes, fonts)
+module.exports = merge(colors, mediaQueries, sizes, fonts, paths)

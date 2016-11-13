@@ -18,6 +18,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background: $black;
+}
+
 /**
  * Install font faces
  */

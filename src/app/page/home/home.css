@@ -1,11 +1,4 @@
 /**
- * Compose paths
- */
-$page: 'style/compose/layout/page.css';
-$heading: 'style/compose/type/heading.css';
-$button: 'style/compose/ui/button.css';
-
-/**
  * Page
  *
  * Styles the root element of this component.
@@ -29,10 +22,7 @@ $button: 'style/compose/ui/button.css';
  * Type and UI
  */
 .title {
-  /*composes: type1 from $heading;*/
-  font-size: responsive 1.2rem 4rem;
-  font-range: 320px 1280px;
-  font-family: 'quatro-book';
+  composes: type1 from $heading;
 }
 
 .button {
