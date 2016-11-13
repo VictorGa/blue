@@ -2,8 +2,7 @@
  * A modern, HTML5-ready alternative to CSS resets
  * https://necolas.github.io/normalize.css/
  */
-
- @import 'normalize.css'; 
+ @import 'normalize.css';
 
 /**
  * Universal Box Sizing with Inheritance
@@ -17,4 +16,14 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+/**
+ * Install font faces
+ */
+@each $font in ($(fonts)) {
+  @font-face {
+    font-family: $font;
+    font-path: 'font/$(font)';
+  }
 }

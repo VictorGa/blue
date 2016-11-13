@@ -6,9 +6,18 @@ module.exports = function () {
   const globPath = [
     path.join(__dirname) + '../src/**/*.css',
     path.join(__dirname) + '../src/**/*.vue'
-  ];
+  ]
 
   return [
+    /**
+     * A little bag of CSS superpowers
+     * http://simplaio.github.io/rucksack/docs
+     */
+    require('rucksack-css')({
+      // This is handled in postcss-short
+      shorthandPosition: false
+    }),
+
     /**
      * Unwrap nested styles like Sass does.
      * https://github.com/postcss/postcss-nested

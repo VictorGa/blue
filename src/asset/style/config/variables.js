@@ -1,4 +1,5 @@
-var merge = require('webpack-merge');
+const merge = require('webpack-merge')
+const font = require('./font')
 
 /**
  * Settings
@@ -17,6 +18,13 @@ const colors = {
  */
 const sizes = {
   'site-width': '960px'
+}
+
+/**
+ * Fonts
+ */
+const fonts = {
+  fonts: font.getFonts()
 }
 
 /**
@@ -39,4 +47,4 @@ if (mobileFirst) {
   }
 }
 
-module.exports = merge(colors, mediaQueries, sizes)
+module.exports = merge(colors, mediaQueries, sizes, fonts)
