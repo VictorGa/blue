@@ -10,6 +10,19 @@ module.exports = function () {
 
   return [
     /**
+     * Plugin to inline @import rules content
+     */
+    require('postcss-import'),
+
+    /**
+     * PostCSS plugin for Sass-like variables, conditionals, and iteratives
+     * https://github.com/jonathantneal/postcss-advanced-variables
+     */
+    require('postcss-advanced-variables')({
+      variables
+    }),
+
+    /**
      * A little bag of CSS superpowers
      * http://simplaio.github.io/rucksack/docs
      */
@@ -23,19 +36,6 @@ module.exports = function () {
      * https://github.com/postcss/postcss-nested
      */
     require('postcss-nested'),
-
-    /**
-     * Plugin to inline @import rules content
-     */
-    require("postcss-import"),
-
-    /**
-     * PostCSS plugin for Sass-like variables, conditionals, and iteratives
-     * https://github.com/jonathantneal/postcss-advanced-variables
-     */
-    require('postcss-advanced-variables')({
-      variables
-    }),
 
     /**
      * Mixins
