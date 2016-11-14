@@ -32,7 +32,7 @@ const sizes = {
 /**
  * Fonts
  */
-const fonts = {
+const fontFace = {
   fonts
 }
 
@@ -56,4 +56,4 @@ if (mobileFirst) {
   }
 }
 
-module.exports = merge(colors, mediaQueries, sizes, fonts, paths)
+module.exports = merge(colors, mediaQueries, sizes, fontFace, paths)
