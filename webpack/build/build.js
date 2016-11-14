@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var path = require('path');
 var {paths,settings} = require('../../config');
 var webpack = require('webpack');
