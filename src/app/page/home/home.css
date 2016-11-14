@@ -5,6 +5,7 @@
  */
 .page {
   composes: fullscreen-centered from $page;
+  background: rgba(#fff, 0.8);
 }
 
 /**
@@ -13,7 +14,7 @@
  * Centered horizontally and vertically.
  */
 .content {
-  size: 200px;
+  size: 300px;
   margin: * auto;
   text: bold center 1.25em 1.5em;
 }

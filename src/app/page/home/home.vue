@@ -6,7 +6,7 @@
     <div :class="$style.content">
       <h2 :class="$style.title">Home</h2>
       {{ $t('message') }}
-      <button :class="$style.button">Hoi</button>
+      <button :class="$style.button">Example button</button>
     </div>
   </div>
 </template>

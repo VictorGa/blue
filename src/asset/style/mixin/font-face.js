@@ -34,7 +34,5 @@ module.exports = function (mixin, str) {
     `
   })
 
-  console.log(fontFace)
-
   return fontFace
 }
