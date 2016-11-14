@@ -1,6 +1,7 @@
 var _ = require('lodash');
+var shell = require('shelljs');
 var path = require('path');
-var {paths,settings} = require('../../config');
+var {definitions, paths,settings} = require('../../config');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.build');
 var timestamp = Math.floor(new Date().getTime() / 1000);
