@@ -1,3 +1,2 @@
-assetsSubDirectory: 'static'
-assetsPublicPath: '/'
-assetsRoot: '/'
+staticPath: 'static/'
+publicPath: '/'
