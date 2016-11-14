@@ -2,11 +2,13 @@ var path = require('path');
 var _ = require('lodash');
 var webpack = require('webpack');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var {paths,settings} = require('../../config');
 
 var plugins = [
+
+  new ExtractTextPlugin(`css/[name].css`),
 
   /**
    *
@@ -26,11 +28,6 @@ var plugins = [
    *
    */
   new webpack.optimize.OccurenceOrderPlugin(),
-
-  /**
-   *
-   */
-  new ExtractTextPlugin(`${paths.assetsRoot}css/[name].[contenthash].css`),
 
   /**
    *

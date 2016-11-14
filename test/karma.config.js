@@ -1,4 +1,4 @@
-const webpack = require('../webpack/webpack.config.js')
+const webpack = require('../webpack/dev/webpack.dev.js')
 
 webpack.entry = './test/index.js'
 

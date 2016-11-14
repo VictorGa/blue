@@ -1,0 +1,31 @@
+/**
+ * Page
+ *
+ * Styles the root element of this component.
+ */
+.page {
+  composes: fullscreen-centered from $page;
+  background: rgba(#fff, 0.8);
+}
+
+/**
+ * Content
+ *
+ * Centered horizontally and vertically.
+ */
+.content {
+  size: 300px;
+  margin: * auto;
+  text: bold center 1.25em 1.5em;
+}
+
+/**
+ * Type and UI
+ */
+.title {
+  composes: type1 from $heading;
+}
+
+.button {
+  composes: primary from $button;
+}
