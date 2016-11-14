@@ -1,5 +1,5 @@
 const merge = require('webpack-merge')
-const font = require('./font')
+const fonts = require('./font')
 
 /**
  * Settings
@@ -33,7 +33,7 @@ const sizes = {
  * Fonts
  */
 const fonts = {
-  fonts: font.getFonts()
+  fonts
 }
 
 /**
