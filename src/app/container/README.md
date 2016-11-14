@@ -1,7 +1,7 @@
 # Container directory
 
 ### Folder structure
-- Group all container related files in a folder (html, sass, javascript)
+- Group all container related files in a folder (html, css, javascript)
 - Folders should be named in camel case
 
 ### Conventions
