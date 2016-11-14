@@ -1,31 +1,25 @@
 const path = require('path')
 const fs = require('fs')
 
-const getFonts = () => {
-  const fontDir = path.join(__dirname, '../../font')
-  const exps = [
-    'woff2',
-    'woff',
-    'ttf',
-    'eot'
-  ]
+const fontDir = path.join(__dirname, '../../font')
+const exps = [
+  'woff2',
+  'woff',
+  'ttf',
+  'eot'
+]
 
-  let fonts = []
+let fonts = []
 
-  fs.readdirSync(fontDir).forEach((file) => {
-    let fontName = file.replace(/\.[^/.]+$/, '')
-    let ext = file.split('.').pop()
+fs.readdirSync(fontDir).forEach((file) => {
+  let fontName = file.replace(/\.[^/.]+$/, '')
+  let ext = file.split('.').pop()
 
-    if (exps.indexOf(ext) === -1 || fonts.indexOf(fontName) > -1) {
-      return
-    }
+  if (exps.indexOf(ext) === -1 || fonts.indexOf(fontName) > -1) {
+    return
+  }
 
-    fonts.push(fontName)
-  })
+  fonts.push(fontName)
+})
 
-  return fonts.toString()
-}
-
-module.exports = {
-  getFonts
-}
+module.exports = fonts.toString()
