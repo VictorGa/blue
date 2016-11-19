@@ -78,6 +78,7 @@
     "postcss-fontpath": "^0.3.0",
     "postcss-import": "^8.2.0",
     "postcss-loader": "^1.1.0",
+    "postcss-math": "0.0.5",
     "postcss-mixins": "^5.4.0",
     "postcss-nested": "^1.0.0",
     "postcss-short": "^2.0.1",
