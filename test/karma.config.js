@@ -1,6 +1,4 @@
-const webpack = require('../webpack/dev/webpack.dev.js')
-
-webpack.entry = './test/index.js'
+const webpack = require('../webpack/test/webpack.test.js')
 
 module.exports = config => {
   const TRAVIS = process.env.TRAVIS
@@ -17,7 +15,7 @@ module.exports = config => {
     browsers,
     singleRun: TRAVIS,
     frameworks: ['mocha', 'chai'],
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
     files: ['./index.js'],
     plugins: [
       'karma-chrome-launcher',
@@ -25,6 +23,7 @@ module.exports = config => {
       'karma-chai',
       'karma-mocha',
       'karma-webpack',
+      'karma-coverage',
       'karma-mocha-reporter'
     ],
     preprocessors: {
@@ -39,6 +38,17 @@ module.exports = config => {
         base: 'Chrome',
         flags: ['--no-sandbox']
       }
+    },
+    coverageReporter: {
+      reporters: [
+        {
+          type: 'text'
+        },
+        {
+          type: 'html',
+          dir: 'coverage/'
+        }
+      ]
     }
   }
 
