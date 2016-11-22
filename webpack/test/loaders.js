@@ -1,11 +1,11 @@
-var path = require('path')
-var projectRoot = path.resolve(__dirname, '../../')
+var path = require('path');
+var projectRoot = path.resolve(__dirname, '../../');
 var combineLoaders = require('webpack-combine-loaders')
 
 module.exports = [
   {
     test: /\.js$/,
-    loader: 'babel!eslint',
+    loader: 'babel',
     include: projectRoot,
     exclude: /node_modules/
   },
