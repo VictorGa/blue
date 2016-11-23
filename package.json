@@ -33,6 +33,7 @@
     "vue-i18n-manager": "^1.1.0",
     "vue-resource": "^0.9.3",
     "vue-router": "^2.0.1",
+    "vue-social": "^1.0.0",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^3.0.0"
   },
