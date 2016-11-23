@@ -10,7 +10,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./webpack/dev/dev-client'].concat(baseWebpackConfig.entry[name])
 });
 
- const config = merge(baseWebpackConfig, {
+const config = merge(baseWebpackConfig, {
   devtool: '#eval-source-map',
   plugins,
   module: {
