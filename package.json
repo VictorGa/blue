@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node webpack/dev/dev-server.js --env=dev",
-    "dev:dashboard": "webpack-dashboard -- webpack/dev/dev-server.js --env=dev",
+    "dev:dashboard": "webpack-dashboard -- node webpack/dev/dev-server.js --env=dev",
     "test": "karma start test/karma.config.js",
     "build": "node webpack/build/build.js"
   },
