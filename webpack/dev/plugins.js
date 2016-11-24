@@ -3,11 +3,15 @@ var webpack = require('webpack');
 var {definitions, paths} = require('../../config');
 var baseWebpackConfig = require('../webpack.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var DashboardPlugin = require('webpack-dashboard/plugin');
+
 
 const { publicPath } = paths;
 const processEnv = _.merge(definitions, { publicPath })
 
 module.exports = [
+
+  new DashboardPlugin(),
 
   new webpack.DefinePlugin({
     'process.env': JSON.stringify(processEnv)
