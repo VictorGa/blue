@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 var entry = require('./entry');
 var postcss = require('./postcss');
+var vue = require('./vue');
 var plugins = require('./plugins');
 var output = require('./output');
 var resolve = require('./resolve');
 var resolveLoader = require('./resolveLoader');
 var preLoaders = require('./preLoaders');
 var loaders = require('./loaders');
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry,
@@ -24,15 +24,5 @@ module.exports = {
     configFile: './.eslintrc'
   },
   postcss,
-  vue: {
-    loaders: {
-      js: 'babel!eslint',
-      html: 'vue-loader/lib/template-compiler'
-    },
-    cssModules: {
-      localIdentName: '[name]__[local]___[hash:base64:5]--[hash:base64:5]',
-      camelCase: true
-    },
-    postcss
-  }
+  vue
 };
