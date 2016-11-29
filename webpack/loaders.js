@@ -10,21 +10,5 @@ module.exports = [
   {
     test: /\.html$/,
     loader: 'vue-html'
-  },
-  {
-    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-    loader: 'url',
-    query: {
-      limit: 10000,
-      name: 'dist/img/[name].[hash:7].[ext]'
-    }
-  },
-  {
-    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    loader: 'url',
-    query: {
-      limit: 10000,
-      name: 'dist/fonts/[name].[hash:7].[ext]'
-    }
   }
 ];

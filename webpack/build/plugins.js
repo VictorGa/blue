@@ -2,7 +2,6 @@ var path = require('path');
 var _ = require('lodash');
 var webpack = require('webpack');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var {paths,settings} = require('../../config');
 
@@ -28,21 +27,6 @@ var plugins = [
    *
    */
   new webpack.optimize.OccurenceOrderPlugin(),
-
-  /**
-   *
-   */
-  new HtmlWebpackPlugin({
-    filename: paths.index,
-    template: 'index.html',
-    inject: true,
-    minify: {
-      removeComments: true,
-      collapseWhitespace: true,
-      removeAttributeQuotes: true
-    },
-    chunksSortMode: 'dependency'
-  }),
 
   /**
    *
