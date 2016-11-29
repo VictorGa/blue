@@ -1,21 +1,61 @@
-var _ = require('lodash');
-var shell = require('shelljs');
-var path = require('path');
-var {definitions, paths,settings} = require('../../config');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.build');
-var timestamp = Math.floor(new Date().getTime() / 1000);
-var publicPath = `version/${timestamp}/`;
-var buildTarget = path.join(__dirname, '../../', `${paths.buildPath}/${publicPath}`);
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const _ = require('lodash')
+const shell = require('shelljs')
+const path = require('path')
+const webpack = require('webpack')
+const webpackConfig = require('./webpack.build')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const { definitions, paths, settings } = require('../../config')
+const timestamp = Math.floor(new Date().getTime() / 1000)
+const publicPath = `version/${timestamp}/`
+const buildTarget = path.join(__dirname, '../../', paths.buildPath)
+const versionFolder = `${buildTarget}/${publicPath}`;
+const processEnv = _.merge(definitions, { publicPath })
 
 webpackConfig.output = {
-  path: `${buildTarget}`,
-  filename: `js/[name].js`,
-  chunkFilename: `js/[id].js`
+  publicPath: '/',
+  path: buildTarget,
+  filename: `${publicPath}js/[name].js`,
+  chunkFilename: `${publicPath}js/[id].js`
 }
 
-const processEnv = _.merge(definitions, { publicPath })
+webpackConfig.module.loaders.push(
+  {
+    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+    loader: 'url',
+    query: {
+      limit: 10000,
+      name: `${publicPath}static/image/[name].[hash:7].[ext]`
+    }
+  }
+)
+
+webpackConfig.module.loaders.push(
+  {
+    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    loader: 'url',
+    query: {
+      limit: 10000,
+      name: `${publicPath}static/font/[name].[hash:7].[ext]`
+    }
+  }
+)
+
+webpackConfig.plugins.unshift(
+  new HtmlWebpackPlugin({
+    filename: path.resolve(__dirname, '../../', paths.index),
+    template: path.resolve(__dirname, '../../', paths.template),
+    timestamp,
+    inject: true,
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    },
+    chunksSortMode: 'dependency'
+  })
+)
 
 webpackConfig.plugins.unshift(
   new webpack.DefinePlugin({
@@ -23,8 +63,8 @@ webpackConfig.plugins.unshift(
   })
 )
 
-shell.mkdir('-p', buildTarget)
-shell.cp('-R', paths.staticPath, buildTarget)
+shell.mkdir('-p', versionFolder)
+shell.cp('-R', paths.staticPath, versionFolder)
 
 webpack(webpackConfig, function (err, stats) {
   if (err) throw err;

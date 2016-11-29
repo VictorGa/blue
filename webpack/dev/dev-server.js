@@ -5,6 +5,7 @@ var webpackConfig = require('./webpack.dev');
 var config = require('../../config');
 var { paths } = config;
 var proxyMiddleware = require('http-proxy-middleware');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 var app = express();
 var port = 8080;
@@ -27,6 +28,8 @@ compiler.plugin('compilation', function (compilation) {
     cb()
   })
 });
+
+compiler.apply(new DashboardPlugin())
 
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context];
