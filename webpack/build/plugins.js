@@ -2,6 +2,7 @@ var path = require('path');
 var _ = require('lodash');
 var webpack = require('webpack');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+var PrerenderSpaPlugin = require('prerender-spa-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var {paths,settings} = require('../../config');
 
@@ -13,6 +14,18 @@ var plugins = [
    *
    */
   new ProgressBarPlugin(),
+
+  /**
+   * Prerender SPA Plugin
+   * https://github.com/chrisvfritz/prerender-spa-plugin
+   */
+  new PrerenderSpaPlugin(
+    path.join(__dirname, '../../dist'),
+    ['/'],
+    {
+      captureAfterTime: 5000
+    }
+  ),
 
   /**
    *

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
+import VueI18nManager from 'vue-i18n-manager'
 import VueRouter from 'vue-router'
 import VueAnalytics from 'vue-analytics'
 import { sync } from 'vuex-router-sync'
@@ -31,11 +32,22 @@ Vue.http.headers.common.Accept = 'application/json'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   routes
 })
 
 sync(store, router)
+
+/**
+ * Vue I18N Manager
+ */
+Vue.use(VueI18nManager, {
+  store,
+  router,
+  config: {
+    path: `${process.env.publicPath}static/lang`
+  }
+})
 
 /**
  * Analytics
@@ -45,4 +57,4 @@ Vue.use(VueAnalytics, { router })
 /**
  * Bootstrap the application
  */
-export default app(store, router)
+app(store, router)
