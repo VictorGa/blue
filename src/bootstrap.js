@@ -1,17 +1,17 @@
 import Vue from 'vue'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import VueAnalytics from 'vue-analytics'
 import { sync } from 'vuex-router-sync'
 
 import routes from './app/routes'
 import store from './app/store'
-import app from './app'
+import creatApp from './app'
 
 /**
 * Initialize base application styles
 */
-require('./asset/style/base.css')
+// require('./asset/style/base.css')
 
 /**
  * The debug mode is available globally in the Vue.config.debug property
@@ -21,16 +21,16 @@ Vue.config.debug = process.env.debug
 /**
  * Initialize vue-resource plugin to manage http requests
  */
-Vue.use(VueResource)
+// Vue.use(VueResource)
 
-Vue.http.headers.common.Accept = 'application/json'
+// Vue.http.headers.common.Accept = 'application/json'
 
 /**
  * Initialize vue-resource plugin to manage application routing
  */
 Vue.use(VueRouter)
 
-const router = new VueRouter({
+export const router = new VueRouter({
   mode: 'hash',
   routes
 })
@@ -45,4 +45,4 @@ Vue.use(VueAnalytics, { router })
 /**
  * Bootstrap the application
  */
-export default app(store, router)
+export const app = creatApp(store, router)

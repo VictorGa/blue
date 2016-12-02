@@ -1,2 +1,5 @@
+index: './dist/index.html'
+template: 'index.html'
 staticPath: 'static/'
+buildPath: './dist'
 publicPath: '/'
