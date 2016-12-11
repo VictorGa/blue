@@ -6,6 +6,7 @@
   "scripts": {
     "commit": "git-cz",
     "dev": "node webpack/dev/dev-server.js --env=dev",
+    "dev:dashboard": "webpack-dashboard -- node webpack/dev/dev-server.js --env=dev",
     "test": "karma start test/karma.config.js",
     "build": "node webpack/build/build.js"
   },
@@ -35,8 +36,7 @@
     "uuid": "^2.0.3",
     "vue": "^2.0.5",
     "vue-analytics": "^1.0.2",
-    "vue-i18n": "^4.6.0",
-    "vue-i18n-manager": "^1.1.0",
+    "vue-i18n-manager": "^2.2.2",
     "vue-resource": "^0.9.3",
     "vue-router": "^2.0.1",
     "vuex": "^2.0.0",
@@ -108,6 +108,7 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.3",
     "webpack-combine-loaders": "^2.0.3",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.12.2",
