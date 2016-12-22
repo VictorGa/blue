@@ -8,7 +8,7 @@ publicPath: '/'
 index: './dist/index.html'
 
 # The file used a template to generate the index
-template: '../backend/resources/views/layouts/vue.blade.php'
+template: 'index.html'
 
 # The build directory
 buildPath: './dist'
