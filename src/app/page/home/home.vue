@@ -4,9 +4,7 @@
 <template>
   <div :class="$style.page">
     <div :class="$style.content">
-      <h2 :class="$style.title">Home</h2>
-      {{ $t('message') }}
-      <button :class="$style.button">Example button</button>
+      <h1 :class="$style.title">Blue</h1>
     </div>
   </div>
 </template>

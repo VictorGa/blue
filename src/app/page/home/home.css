@@ -1,31 +1,18 @@
-/**
- * Page
- *
- * Styles the root element of this component.
- */
+@import "https://fonts.googleapis.com/css?family=Pacifico";
+
 .page {
   composes: fullscreen-centered from $page;
-  background: rgba(#fff, 0.8);
+  background: #203880;
 }
 
-/**
- * Content
- *
- * Centered horizontally and vertically.
- */
 .content {
-  size: 300px;
-  margin: * auto;
-  text: bold center 1.25em 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/**
- * Type and UI
- */
 .title {
-  composes: type1 from $heading;
-}
-
-.button {
-  composes: primary from $button;
+  font-family: 'Pacifico', cursive;
+  color: white;
 }
