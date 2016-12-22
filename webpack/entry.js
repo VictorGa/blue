@@ -1,4 +1,6 @@
 module.exports = {
-  polyfills: 'babel-polyfill',
-  app: './src/bootstrap.js'
+  app: [
+    'babel-polyfill',
+    './src/bootstrap.js'
+  ]
 };
