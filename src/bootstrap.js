@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
-import VueRouter from 'vue-router'
+import VueI18nManager from 'vue-i18n-manager'
 import VueAnalytics from 'vue-analytics'
 import { sync } from 'vuex-router-sync'
 
-import routes from './app/routes'
-import store from './app/store'
-import app from './app'
+import App from './app'
+import router from 'src/app/router'
+import store from 'src/app/store'
 
 /**
 * Initialize base application styles
@@ -26,23 +26,31 @@ Vue.use(VueResource)
 Vue.http.headers.common.Accept = 'application/json'
 
 /**
- * Initialize vue-resource plugin to manage application routing
- */
-Vue.use(VueRouter)
-
-const router = new VueRouter({
-  mode: 'hash',
-  routes
-})
-
-sync(store, router)
-
-/**
  * Analytics
  */
 Vue.use(VueAnalytics, { router })
 
 /**
- * Bootstrap the application
+ * Create new app instance
  */
-export default app(store, router)
+const app = new Vue(App)
+
+/**
+ * Sync store and router
+ */
+sync(store, router)
+
+/**
+ * I18N manager
+ */
+Vue.use(VueI18nManager, {
+  store,
+  router,
+  config: {
+    path: `${process.env.publicPath}static/lang`
+  }
+})
+
+Vue.initI18nManager().then(() => {
+  app.$mount('#app')
+})

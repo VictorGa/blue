@@ -1,21 +1,9 @@
-import Vue from 'vue'
-import VueI18nManager from 'vue-i18n-manager'
 import template from './index.html'
+import store from 'src/app/store'
+import router from 'src/app/router'
 
-export default function (store, router) {
-  const app = new Vue({
-    template,
-    store,
-    router
-  })
-
-  const path = `${process.env.publicPath}static/lang`
-
-  Vue.use(VueI18nManager, {
-    store,
-    router,
-    config: { path }
-  })
-
-  return Vue.initI18nManager().then(() => app.$mount('#app'))
+export default {
+  template,
+  store,
+  router
 }
