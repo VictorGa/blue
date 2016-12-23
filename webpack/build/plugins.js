@@ -6,9 +6,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var {paths,settings} = require('../../config');
 
 var plugins = [
-
-  new ExtractTextPlugin(`css/[name].css`),
-
   /**
    *
    */
