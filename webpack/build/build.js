@@ -63,6 +63,10 @@ webpackConfig.plugins.unshift(
   })
 )
 
+webpackConfig.plugins.unshift(
+  new ExtractTextPlugin(`${publicPath}css/[name].css`)
+)
+
 shell.mkdir('-p', versionFolder)
 shell.cp('-R', paths.staticPath, versionFolder)
 
