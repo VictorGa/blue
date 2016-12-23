@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueI18nManager from 'vue-i18n-manager'
 import VueAnalytics from 'vue-analytics'
+import { sync } from 'vuex-router-sync'
 
 import App from './app'
 import router from 'src/app/router'
@@ -33,6 +34,11 @@ Vue.use(VueAnalytics, { router })
  * Create new app instance
  */
 const app = new Vue(App)
+
+/**
+ * Sync store and router
+ */
+sync(store, router)
 
 /**
  * I18N manager
