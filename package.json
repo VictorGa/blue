@@ -101,7 +101,7 @@
     "stylelint-config-standard": "^14.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.4.0",
-    "svgloader": "^0.1.0",
+    "svgloader": "^0.1.1",
     "url-loader": "^0.5.7",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^9.8.1",
