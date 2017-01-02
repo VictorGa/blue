@@ -9,6 +9,9 @@ module.exports = {
     asset: path.resolve(__dirname, '../src/asset'),
     style: path.resolve(__dirname, '../src/asset/style'),
     font: path.resolve(__dirname, '../src/asset/font'),
-    component: path.resolve(__dirname, '../src/app/component')
+    component: path.resolve(__dirname, '../src/app/component'),
+    page: path.resolve(__dirname, '../src/app/page'),
+    store: path.resolve(__dirname, '../src/app/store/modules'),
+    container: path.resolve(__dirname, '../src/app/container')
   }
 }
