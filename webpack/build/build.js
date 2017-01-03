@@ -5,13 +5,13 @@ const webpack = require('webpack')
 const webpackConfig = require('./webpack.build')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 const { definitions, paths, settings } = require('../../config')
 const timestamp = Math.floor(new Date().getTime() / 1000)
 const publicPath = `version/${timestamp}/`
 const buildTarget = path.join(__dirname, '../../', paths.buildPath)
-const versionFolder = `${buildTarget}/${publicPath}`;
+const versionFolder = `${buildTarget}/${publicPath}`
 const processEnv = _.merge(definitions, { publicPath })
+const favicon = require('../util/favicon/faviconGenerator')
 
 webpackConfig.output = {
   publicPath: '/',
@@ -62,6 +62,9 @@ webpackConfig.plugins.unshift(
     'process.env': JSON.stringify(processEnv)
   })
 )
+
+// generate favicons
+favicon(processEnv.favicon, webpackConfig, publicPath)
 
 shell.mkdir('-p', versionFolder)
 shell.cp('-R', paths.staticPath, versionFolder)

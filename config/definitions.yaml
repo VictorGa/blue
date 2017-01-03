@@ -5,3 +5,7 @@ api:
 facebook:
   key: 1478098066847
   secret: 1478098066847
+favicon:
+  path: 'static/image/favicon.png'
+  out: 'static/favicons/icon-[hash]'
+  background: '#fff'
