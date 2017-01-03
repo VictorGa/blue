@@ -7,5 +7,5 @@ facebook:
   secret: 1478098066847
 favicon:
   path: 'static/image/favicon.png'
-  out: 'static/favicons/icon-[hash]'
+  out: 'static/favicons/icon-[hash]-'
   background: '#fff'
