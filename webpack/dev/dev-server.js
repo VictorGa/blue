@@ -1,4 +1,5 @@
 var path = require('path');
+var chalk = require('chalk');
 var express = require('express');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.dev');
@@ -6,9 +7,20 @@ var config = require('../../config');
 var { paths } = config;
 var proxyMiddleware = require('http-proxy-middleware');
 var DashboardPlugin = require('webpack-dashboard/plugin');
-
 var app = express();
 var port = 8080;
+var sslPort = port + 1
+
+const ssl = true
+if (ssl) {
+  var fs = require('fs')
+  var https = require('https')
+  https.createServer({
+      key: fs.readFileSync('./config/dev/cert/key.pem'),
+      cert: fs.readFileSync('./config/dev/cert/cert.pem')
+  }, app).listen(sslPort);
+}
+
 var {proxyTable} = config.settings;
 var compiler = webpack(webpackConfig);
 
@@ -58,5 +70,8 @@ module.exports = app.listen(port, function (err) {
     console.log(err);
     return
   }
-  console.log('Listening at http://localhost:' + port + '\n')
+  console.log(chalk.bold('\nListening at'))
+  console.log(chalk.bold.green(`   http://localhost:${port}`))
+  if (ssl) console.log(chalk.bold.yellow(`   https://localhost:${sslPort}`))
+
 });
