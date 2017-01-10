@@ -7699,9 +7699,9 @@ vue-i18n-manager:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/vue-i18n-manager/-/vue-i18n-manager-2.2.2.tgz#ce079be8ee72cce967f7144668ca9d5b4b8e3fe3"
 
-vue-loader@^9.8.1:
-  version "9.9.5"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-9.9.5.tgz#0893e3093e90c8fbe852053b2b0f4854a3bf4651"
+vue-loader@10.0.2:
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-10.0.2.tgz#6fe7bcefb32c5439bd0338464aa22673ad62299c"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
@@ -7714,7 +7714,6 @@ vue-loader@^9.8.1:
     source-map "^0.5.6"
     vue-hot-reload-api "^2.0.1"
     vue-style-loader "^1.0.0"
-    vue-template-compiler "^2.0.5"
     vue-template-es2015-compiler "^1.2.2"
 
 vue-resource@^0.9.3:
@@ -7731,9 +7730,9 @@ vue-style-loader@^1.0.0:
   dependencies:
     loader-utils "^0.2.7"
 
-vue-template-compiler@^2.0.5:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.0.7.tgz#8750875530826cf3e4f6d1a38d4e9fb9000fcacc"
+vue-template-compiler@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.5.tgz#9555412e47b795fffdb9445c5b1645f9195b1f68"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -7742,9 +7741,9 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.2.4.tgz#f8068d805bd93b0b47afb9dc9f47976f77c8282a"
 
-vue@^2.0.5:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.7.tgz#83698ef4f76ce702f425b5576b06ff28e12db143"
+vue@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.5.tgz#d2568d3e5093cf1486eef44cf37177e3f51d568d"
 
 vuex-router-sync@^3.0.0:
   version "3.0.0"
