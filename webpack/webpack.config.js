@@ -7,6 +7,7 @@ var output = require('./output');
 var resolve = require('./resolve');
 var resolveLoader = require('./resolveLoader');
 var preLoaders = require('./preLoaders');
+var postLoaders = require('./postLoaders');
 var loaders = require('./loaders');
 
 module.exports = {
@@ -17,7 +18,8 @@ module.exports = {
   resolveLoader,
   module: {
     preLoaders,
-    loaders
+    loaders,
+    postLoaders
   },
   eslint: {
     formatter: require('eslint-friendly-formatter'),
